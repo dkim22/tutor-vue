@@ -10,22 +10,34 @@
         보기
       </button>
     </div>
-    <input type="button" value="로그인" class="login-form__submit" />
+    <input
+      type="button"
+      value="로그인"
+      class="login-form__submit"
+      @click.prevent="handleClick"
+    />
   </form>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "HelloWorld",
   setup() {
+    const router = useRouter();
     const isShowPassword = ref(false);
     const togglePassword = () => {
       isShowPassword.value = !isShowPassword.value;
     };
+    const handleClick = () => {
+      router.push({
+        name: "About",
+      });
+    };
 
-    return { isShowPassword, togglePassword };
+    return { isShowPassword, togglePassword, handleClick };
   },
 });
 </script>

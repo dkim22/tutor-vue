@@ -8,13 +8,9 @@
 
 <style lang="scss">
 @import "~normalize.css";
-:root {
-  --main-color: hotpink;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 </style>
